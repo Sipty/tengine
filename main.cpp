@@ -9,28 +9,18 @@
 
 int main ()
 {
-    std::cout<<"Hello world. I'm tengine! :-D" <<std::endl;
-
     Tengine eng;
-
     eng.init();
 
 
-    eng.set_dim(10, 10);
-    eng.print_dim();
+    int timer = 1;
+    while(1)
+    {
+        clear(); // clear previously-printed characters
+        mvprintw(0,0,("Penis" + std::to_string(timer)).c_str());
+        timer++;
+        refresh();
+    }
 
-
-    sleep(1);
-    eng.end();
-
-
-
-
-    /* end play sesh here */
-
-    // // test run
-    // Texture tex;
-    // tex.set_dim(10, 10);
-    // tex.print_dim();
-
+    eng.end();  
 }
