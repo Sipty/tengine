@@ -1,16 +1,21 @@
 #include <ncurses.h> 
 #include <string>
 
-class Tframe 
+class Tframe
 {
     public:
-        void set_dim(int, int);
+        void pos(int x, int y);
+        void dim(int w, int h);
+        
         void print_dim();
+        void print_pos();
 
     private:
         const char* TAG = "TENGINE | Frame";
 
-        int width=0;
-        int height=0;
+        int w=0;
+        int h=0;
+        int x = 0;
+        int y = 0;
         void print(const char* text, int, int);
 };

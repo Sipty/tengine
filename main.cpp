@@ -14,7 +14,7 @@ int main ()
 
 
     int timer = 1;
-    while(1)
+    while(timer < 40000)
     {
         clear(); // clear previously-printed characters
         mvprintw(0,0,("Penis" + std::to_string(timer)).c_str());
