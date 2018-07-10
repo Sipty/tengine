@@ -15,19 +15,30 @@ int main ()
 
     // this is to be extracted code
     int bx=0, by=0;
-    Tframe ball;   
-    ball.pos(bx,by);
-    ball.art("3==D");
+    // // Tframe ball;   
+    // // ball.pos(bx,by);
+    // // ball.art("3==D");
     int timer = 1;
-    
+
+    Tframe frame;
+    Tobject obj;
+    obj.pos(0,0);
+    frame.bind(obj);
+
+
+
+    obj.art("3==D");
+
     while(timer < TTL)
     {
         clear(); // clear previously-printed characters
-        ;
-        by++;
-        ball.pos(bx, by);
-        ball.draw();
-        // mvprintw(0,0,("Penis" + std::to_string(timer)).c_str());
+        bx++;
+        
+        obj.pos(bx, by);
+        frame.draw();
+        // obj->pos(by, by);
+
+        // mvprintw(0,by,("Penis" + std::to_string(timer)).c_str());
         timer++;
         refresh();
         usleep(DELAY);
