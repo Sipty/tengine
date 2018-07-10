@@ -46,3 +46,19 @@ void Tframe::print(const char* text, int x=0, int y=0)
     mvprintw(x, y, text);
 }
 
+/*
+    // TODO: check if asset points at an address or is manually entered
+    asset - manually added art asset for frame
+*/
+void Tframe::art(std::string asset)
+{
+    this->art_asset = asset;
+}
+
+/*
+    Draws the art asset, according to the dimentions set
+*/
+void Tframe::draw()
+{
+    print(this->art_asset.c_str(), this->x, this->y);
+}

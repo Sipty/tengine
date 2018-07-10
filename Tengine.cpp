@@ -1,5 +1,8 @@
 #include "Tengine.h"
 
+/*
+    Create the window and set basic enviromnemntal setup vars
+*/
 void Tengine::init()
 {
     initscr(); // Initialise the window
