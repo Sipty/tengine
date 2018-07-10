@@ -10,6 +10,8 @@ class Tengine
     public:
         void init();
         void end();
+        int get_width();
+        int get_height();
 };
 
 #endif /* TENGINE */

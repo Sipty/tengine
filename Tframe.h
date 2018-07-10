@@ -16,7 +16,8 @@ class Tframe
         void bind(Tobject &);
     
     private:
-        Tobject * objects;
+        std::vector<Tobject*> objects;
+        // Tobject * objects;
 };
 
 #endif /* TFRAME_H */

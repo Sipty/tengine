@@ -13,35 +13,45 @@ int main ()
     Tengine eng;
     eng.init();
 
-    // this is to be extracted code
-    int bx=0, by=0;
-    // // Tframe ball;   
-    // // ball.pos(bx,by);
-    // // ball.art("3==D");
-    int timer = 1;
-
     Tframe frame;
-    Tobject obj;
-    obj.pos(0,0);
-    frame.bind(obj);
+    Tobject up, down, left, right;
 
+    int bx= eng.get_width()/2;
+    int by= eng.get_height()/2;
 
+    up.pos(bx,by);
+    down.pos(bx,by);
+    left.pos(bx,by);
+    right.pos(bx,by);
 
-    obj.art("3==D");
+    frame.bind(up);
+    frame.bind(down);
+    frame.bind(left);
+    frame.bind(right);
 
+    up.art("\n^^\n||\n||\nMM");
+    down.art("\nWW\n||\n||\n^^");
+    
+    right.art("3==D");
+    left.art("D==3");
+    
+    
+    int timer;
     while(timer < TTL)
     {
-        clear(); // clear previously-printed characters
-        bx++;
+        clear();
         
-        obj.pos(bx, by);
+        right.move_right();
+        left.move_left();
+        up.move_up();
+        down.move_down();
+        
         frame.draw();
-        // obj->pos(by, by);
-
-        // mvprintw(0,by,("Penis" + std::to_string(timer)).c_str());
-        timer++;
+        
         refresh();
         usleep(DELAY);
+
+        timer++;
     }
 
     eng.end();  

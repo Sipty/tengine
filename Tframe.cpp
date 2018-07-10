@@ -9,8 +9,11 @@ void Tframe::draw()
     // mvprintw(x, y, text);
 
     // GO THROUGH THE OBJECTS AND DRAW THEM
-    
-    mvprintw(objects->y, objects->x, objects->art_asset.c_str());    
+    for(int i=0; i<objects.size(); i++)
+    {
+        mvprintw(objects.at(i)->y, objects.at(i)->x,
+            objects.at(i)->art_asset.c_str());    
+    }
 }
 
 /*
@@ -18,5 +21,5 @@ void Tframe::draw()
 */
 void Tframe::bind(Tobject &obj)
 {
-    objects = &obj;
+    objects.push_back(&obj);
 }

@@ -14,3 +14,13 @@ void Tengine::end()
 {
     endwin();   // Restore terminal
 }
+
+int Tengine::get_width()
+{
+    return getmaxx(stdscr);
+}
+
+int Tengine::get_height()
+{
+    return getmaxy(stdscr);
+}

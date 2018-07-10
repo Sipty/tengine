@@ -11,6 +11,12 @@ class Tobject
         void dim(int w, int h);
         void art(std::string);
 
+        void move_up();
+        void move_down();
+        void move_left();
+        void move_right();
+        
+
         // void print_dim();
         // void print_pos();
 

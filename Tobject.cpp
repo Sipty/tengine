@@ -26,5 +26,29 @@ void Tobject::pos(int x, int y)
 */
 void Tobject::art(std::string asset)
 {
-    this->art_asset = asset;
+    art_asset = asset;
+}
+
+
+/*
+    movement functions
+*/
+void Tobject::move_right()
+{
+    x ++;
+}
+
+void Tobject::move_left()
+{
+    x --;
+}
+
+void Tobject::move_up()
+{
+    y --;
+}
+
+void Tobject::move_down()
+{
+    y ++;
 }
